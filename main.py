@@ -2,15 +2,14 @@ from os import system
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import mechanicalsoup
-from bs4 import BeautifulSoup as bs
 import time
 
 Subjects = ['Arabic','English','French',"Who give's a shit ?",'Math','Phyisics','Chimistry','Biography','Total','Sins','Grand Total','Pure Total']
 
 browser = mechanicalsoup.StatefulBrowser()
-n=16513
+n=16513 
 m=16518
-
+#scrap data between student number n to student number m
 for num in range(n,m+1):
 	base_url = "http://moed.gov.sy/scientific/"
 	browser.open(base_url)
@@ -42,12 +41,12 @@ for num in range(n,m+1):
 				continue
 			print(i.text)
 			skipper = not skipper
-	#shit
+	
 	for i in dictSubjects:
     		print(i + ' = ' + str(dictSubjects[i]))
 
 	pure = dictSubjects['Total']-max(dictSubjects['French'],dictSubjects['English'])
 	print(Subjects[current_subject] + ' = ' + str(pure))
 
-	time.sleep(8)
+	time.sleep(3)
 	#print(log)
