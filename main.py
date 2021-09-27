@@ -18,7 +18,7 @@ students = {} #the dict that we are going to be filling in with student dicts
 
 #scrap data between student number n to student number m
 for num in range(n,m+1):
-	base_url = "http://moed.gov.sy/scientific/"
+	base_url = "http://secondary2021.moed.gov.sy/scientific/"
 	browser.open(base_url)
 	browser.select_form()
 
