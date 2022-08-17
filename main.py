@@ -5,14 +5,14 @@ import time
 import json
 
 Subjects = ['Arabic','English','French',"Who give's a shit ?",'Math','Phyisics','Chimistry','Biography','Total','Sins','Grand Total','Pure Total']
-Student_proprities = ['City' , 'Name' , 'MotherName' , 'School' , 'Subjects'] #size 5
+Student_proprities = ['City' , 'Name' , "Mother's Name" , 'School' , 'Subjects'] #size 5
 
 check = u'\u2713'
 minus = u'\u2212'
 
 browser = mechanicalsoup.StatefulBrowser()
-n=16250 
-m=16300
+n=11000 
+m=12000
 
 students = {} #the dict that we are going to be filling in with student dicts
 
@@ -81,16 +81,13 @@ for num in range(n,m+1):
 
 		students[stdnum] = student #pushing the student into the dict base on his stdnum
 	
-		time.sleep(0.5)
-
 	except IndexError :
 		students [num] = 'This student number doesn\'t exist.'
-		time.sleep(0.3)
 print(students)
 
 for i in students :
 	print(i , end=' = ')
 	print(students[i])
 
-json.dump(students,open('data.json','w'))
+json.dump(students,open('data2.json','w'))
 #print(log)
