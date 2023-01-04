@@ -70,7 +70,7 @@ for num in range(n,m+1):
 		for i in dictSubjects:
     			print(i + ' = ' + str(dictSubjects[i]))
 		try :
-			pure = dictSubjects['Total']-max(dictSubjects['French'],dictSubjects['English'])
+			pure = dictSubjects['Total']-min(dictSubjects['French'],dictSubjects['English'])
 			dictSubjects['Pure Total'] = pure
 	
 			print(Subjects[current_subject] + ' = ' + str(pure))
